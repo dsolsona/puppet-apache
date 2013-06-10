@@ -1,0 +1,8 @@
+name         'chrisboulton-apache'
+version      '0.0.1'
+license      'MIT'
+summary      'Install and manage Apache'
+description  'A different approach to managing Apache sites available/enabled, and configuration includes.'
+author       'Chris Boulton <chris@chrisboulton.com>'
+source       'https://github.com/chrisboulton/puppet-apache'
+project_page 'https://github.com/chrisboulton/puppet-apache'
