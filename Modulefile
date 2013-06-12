@@ -1,5 +1,5 @@
 name         'chrisboulton-apache'
-version      '0.0.1'
+version      '0.0.2'
 license      'MIT'
 summary      'Install and manage Apache'
 description  'A different approach to managing Apache sites available/enabled, and configuration includes.'
