@@ -13,6 +13,8 @@ define apache::site($ensure = 'present', $source = '', $content = '') {
 
   File {
     notify => Service['apache2'],
+    owner  => 'root',
+    group  => 'root',
   }
 
   if ($content) {

@@ -14,6 +14,8 @@ define apache::module($ensure = 'present', $config_source = '', $config_content 
   File {
     notify  => Service['apache2'],
     require => Package['apache2'],
+    owner   => 'root',
+    group   => 'root',
   }
 
   if ($config_content) {

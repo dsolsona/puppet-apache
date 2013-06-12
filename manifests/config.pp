@@ -17,6 +17,8 @@ define apache::config($ensure = 'present', $source = '', $content = '') {
     notify  => Service['apache2'],
     ensure  => $ensure,
     require => Package['apache2'],
+    owner   => 'root',
+    group   => 'root',
   }
 
   if ($content) {
