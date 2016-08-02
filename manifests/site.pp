@@ -38,7 +38,10 @@ define apache::site($ensure = 'present', $source = '', $content = '') {
     }
   }
   else {
-    file { $sites_available_path: }
+    file { $sites_available_path:
+      ensure => $ensure,
+      require => Exec["/usr/sbin/a2dissite ${name}"]
+    }
   }
 
   if ($ensure == 'present') {
@@ -50,7 +53,7 @@ define apache::site($ensure = 'present', $source = '', $content = '') {
   }
   else {
     exec { "/usr/sbin/a2dissite ${name}":
-      onlyif  => "/usr/bin/stat ${sites_enabled_path}",
+      onlyif  => "/usr/bin/stat ${sites_available_path}",
       notify  => Exec['reload-apache2'],
       require => File[$sites_available_path],
     }
